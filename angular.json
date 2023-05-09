@@ -99,6 +99,39 @@
           }
         }
       }
+    },
+    "o-button": {
+      "projectType": "library",
+      "root": "projects/o-button",
+      "sourceRoot": "projects/o-button/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/o-button/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/o-button/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/o-button/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/o-button/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
