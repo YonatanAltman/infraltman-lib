@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {OfekInfraNav} from "../layout/nav-bar/nav-bar.component";
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ofek-infras';
+
+  navs: OfekInfraNav[] = [
+    {label: 'home', link: 'home'},
+    {label: 'feed', link: 'feed'},
+
+  ]
 }
