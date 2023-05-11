@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {OButtonType} from "./o-button.type";
 
 @Component({
-  selector: 'lib-o-button',
+  selector: 'o-button',
   template: `
-    <p>
-      o-button works!
-    </p>
+    <button class="o-button" [ngClass]="type">
+      <ng-content></ng-content>
+    </button>
   `,
-  styles: [
-  ]
+  styleUrls: ['./o-button.component.scss']
 })
 export class OButtonComponent {
 
+  @Input() type: OButtonType = 'basic';
 }

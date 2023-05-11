@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { OButtonComponent } from './o-button.component';
+import {CommonModule} from "@angular/common";
 
 
 
@@ -8,6 +9,7 @@ import { OButtonComponent } from './o-button.component';
     OButtonComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     OButtonComponent

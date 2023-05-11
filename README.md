@@ -7,3 +7,5 @@
 ### Create a library
 ``ng generate library <name>``
 
+### npm install
+``npm install <dist loaction>``
