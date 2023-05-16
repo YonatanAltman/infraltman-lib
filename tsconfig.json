@@ -8,6 +8,13 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "infra": [
+        "dist/infra"
+      ], "@infra": [
+        "dist/infra"
+      ]
+    },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,

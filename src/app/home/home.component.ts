@@ -1,5 +1,5 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {InfraButton} from "../../layout/button/button.interface";
+import {InfraButton} from "../../../projects/infra/src/lib/button/button.interface";
 
 @Component({
   selector: 'test-home',

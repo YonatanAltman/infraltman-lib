@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {OfekInfraNav} from "../nav-bar/nav-bar.component";
+import {OfekInfraNav} from "../../nav-bar/nav-bar.component";
 
 @Component({
   selector: 'infra-layout',

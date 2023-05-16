@@ -5,8 +5,9 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {RouterModule} from "@angular/router";
 import {FeedComponent} from './feed/feed.component';
-import {LayoutModule} from "../layout/layout.module";
-import {ButtonModule} from "../layout/button/button.module";
+import {LayoutModule} from "../../projects/infra/src/lib/layout/layout.module";
+import {ButtonModule} from "@infra";
+
 
 @NgModule({
   declarations: [
