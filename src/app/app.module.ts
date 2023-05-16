@@ -6,6 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {RouterModule} from "@angular/router";
 import {FeedComponent} from './feed/feed.component';
 import {LayoutModule} from "../layout/layout.module";
+import {ButtonModule} from "../layout/button/button.module";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {LayoutModule} from "../layout/layout.module";
 
 
     ]),
-    LayoutModule
+    LayoutModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
