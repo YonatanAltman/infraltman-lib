@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4040 -o",
+    "start:dev": "ng serve --port 4040 -o -c=development",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "build:infra": "ng test o-button ng build o-button",

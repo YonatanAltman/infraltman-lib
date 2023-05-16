@@ -12,7 +12,9 @@
       "infra": [
         "dist/infra"
       ], "@infra": [
+        "projects/infra/src/public-api.ts",
         "dist/infra"
+
       ]
     },
     "noImplicitReturns": true,

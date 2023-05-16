@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit, OnChanges {
   homeButton: InfraButton = {
     label: 'Let go home'
   };
+  errorButton: InfraButton = {
+    label: 'You\'r late',
+    type: 'error'
+  };
 
   ngOnInit(): void {
     console.log('ngOnInit happened', {hey: 'Yonatan'})

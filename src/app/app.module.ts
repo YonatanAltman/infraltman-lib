@@ -5,8 +5,9 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {RouterModule} from "@angular/router";
 import {FeedComponent} from './feed/feed.component';
-import {LayoutModule} from "../../projects/infra/src/lib/layout/layout.module";
-import {ButtonModule} from "@infra";
+import {ButtonModule, INFRA_ENVIRONMENT_TOKEN, LayoutModule} from "@infra";
+import {HttpClientModule} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
 
 @NgModule({
@@ -26,9 +27,12 @@ import {ButtonModule} from "@infra";
 
     ]),
     LayoutModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide:INFRA_ENVIRONMENT_TOKEN,useValue: environment}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
