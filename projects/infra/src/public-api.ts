@@ -10,3 +10,7 @@ export * from './lib/layout/layout.module'
 export * from './lib/service/api.service';
 
 export * from './lib/tokens/environment.token';
+
+export * from './lib/generic-form/generic-form.component';
+export * from './lib/generic-form/generic-form.module';
+export * from './lib/generic-form/generic-form.interface';

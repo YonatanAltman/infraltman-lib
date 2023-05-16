@@ -1,0 +1,10 @@
+<form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+  <ng-container *ngFor="let config of inputs">
+
+    <div class="field">
+      <div class="label">{{config.label}}</div>
+      <input [type]="config.type" [formControlName]="config.formControlName">
+    </div>
+  </ng-container>
+  <button type="submit">Submit</button>
+</form>

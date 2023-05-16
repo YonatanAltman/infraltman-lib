@@ -208,6 +208,11 @@
       "root": "projects/infra",
       "sourceRoot": "projects/infra/src",
       "prefix": "infra",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

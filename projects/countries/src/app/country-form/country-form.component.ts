@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UpperCasePipe} from "@angular/common";
+import {GenericFormControl} from "@infra";
 
 @Component({
   selector: 'app-country-form',
@@ -10,6 +10,17 @@ import {UpperCasePipe} from "@angular/common";
 export class CountryFormComponent {
   formGroup: FormGroup;
   @Input() title = 'Forms';
+  inputs: GenericFormControl[] = [
+    {
+      type: 'text',
+      label: 'Name',
+      formControlName:'name'
+    },{
+      type: 'text',
+      label: 'Friend',
+      formControlName:'friendName'
+    },
+  ];
 
   constructor(private fb: FormBuilder) {
     this.formGroup = this.getForm();
@@ -18,16 +29,16 @@ export class CountryFormComponent {
   private getForm(): FormGroup {
 
     return this.fb.group({
-      name: ['',Validators.required],
+      name: ['', Validators.required],
       startDate: [],
       endDate: [],
       notes: [],
     })
   }
 
-  onSubmit() {
+  onSubmit(value?: any) {
 
-    console.log('submit',this.formGroup.value);
+    console.log('submit', value);
 
   }
 }

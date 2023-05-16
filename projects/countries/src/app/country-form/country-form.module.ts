@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CountryFormComponent} from './country-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {GenericFormModule} from "@infra";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GenericFormModule
   ]
 })
 export class CountryFormModule {
