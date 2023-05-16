@@ -1,0 +1,11 @@
+:host{
+  form{
+    margin: 10px 20px;
+    .field{
+      margin-top: 10px;
+    }
+  }
+  .ng-touched .ng-invalid{
+    border: red 1px solid;
+  }
+}

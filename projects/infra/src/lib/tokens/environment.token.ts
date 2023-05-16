@@ -5,4 +5,5 @@ export interface InfraEnvironment {
   api: string;
 }
 
-export const INFRA_ENVIRONMENT_TOKEN = new InjectionToken<InfraEnvironment>('InfraEnvironment');
+export const INFRA_ENVIRONMENT_TOKEN =
+  new InjectionToken<InfraEnvironment>('InfraEnvironment');

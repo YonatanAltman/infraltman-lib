@@ -1,0 +1,45 @@
+// _variables.scss
+
+// Default colors
+$color-default: #000000;
+
+// Success colors
+$color-success: #00ff00;
+
+// Danger colors
+$color-danger: #ff0000;
+
+// Warning colors
+$color-warning: #ffff00;
+
+// _theme.scss
+
+//@import 'variables';
+
+// Default theme
+$theme-default: (
+  color-primary: $color-default,
+  color-secondary: $color-default,
+  color-tertiary: $color-default,
+);
+
+// Success theme
+$theme-success: (
+  color-primary: $color-success,
+  color-secondary: $color-success,
+  color-tertiary: $color-success,
+);
+
+// Danger theme
+$theme-danger: (
+  color-primary: $color-danger,
+  color-secondary: $color-danger,
+  color-tertiary: $color-danger,
+);
+
+// Warning theme
+$theme-warning: (
+  color-primary: $color-warning,
+  color-secondary: $color-warning,
+  color-tertiary: $color-warning,
+);

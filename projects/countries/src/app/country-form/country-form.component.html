@@ -1,0 +1,22 @@
+<h2>{{title}}</h2>
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <div class="label">Name</div>
+    <input type="text" formControlName="name">
+  </div>
+  <div class="field">
+    <div class="label">Start date</div>
+    <input type="date">
+  </div>
+  <div class="field">
+    <div class="label">End date</div>
+    <input type="date">
+  </div>
+  <div class="field">
+
+    <div class="label">{{'notes' |titlecase}} </div>
+    <textarea></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>

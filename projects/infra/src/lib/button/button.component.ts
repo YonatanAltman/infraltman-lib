@@ -4,6 +4,7 @@ import {InfraButton, InfraClass} from "./button.interface";
 const CONFIG: Partial<InfraButton> = {
   type: "default",
   class: 'btn',
+  size: 'medium'
 }
 
 @Component({
@@ -23,7 +24,11 @@ export class ButtonComponent implements OnInit {
   };
 
   public get classArr(): string | undefined {
-    return  [this.className, this.config?.type].join(' ');
+    return [
+      this.className,
+      this.config?.type,
+      this.config?.size,
+    ].join(' ');
   };
 
   @Input() config?: InfraButton = CONFIG;
