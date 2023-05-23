@@ -25,7 +25,10 @@ export class GenericFormComponent implements OnInit {
     this.inputs.forEach(input => {
       input.isRequired = input.validators?.includes(Validators.required);
       this.formGroup.addControl(input.formControlName,
-        this.fb.control('', [...input?.validators || []]))
+        this.fb.control('',
+          [...input?.validators || []],
+          [...input.asyncValidators || []])
+      )
     })
   }
 

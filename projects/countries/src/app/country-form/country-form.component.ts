@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {GenericFormControl, someAsyncValidators, UID_VALIDATORS} from "@infra";
+import {GenericFormControl, isProjectExistAsyncValidators, someAsyncValidators, UID_VALIDATORS} from "@infra";
+import {ReplaySubject} from "rxjs";
 
 @Component({
   selector: 'app-country-form',
@@ -8,6 +9,7 @@ import {GenericFormControl, someAsyncValidators, UID_VALIDATORS} from "@infra";
   styleUrls: ['./country-form.component.scss']
 })
 export class CountryFormComponent {
+  projects$ = new ReplaySubject<string[]>(1);
   formGroup: FormGroup;
   @Input() title = 'Forms';
   inputs: GenericFormControl[] = [
@@ -21,9 +23,9 @@ export class CountryFormComponent {
       ]
     }, {
       type: 'text',
-      label: 'Name',
+      label: 'Project name',
       formControlName: 'name',
-      validators: [Validators.required]
+      asyncValidators: [isProjectExistAsyncValidators(this.projects$.asObservable())]
     }, {
       type: 'text',
       label: 'Friend',
@@ -37,6 +39,11 @@ export class CountryFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.formGroup = this.getForm();
+
+    setTimeout(() => {
+      console.log('setTimeout');
+      this.projects$.next(['pr1', 'pr2']);
+    }, 1000 * 3)
   }
 
   private getForm(): FormGroup {

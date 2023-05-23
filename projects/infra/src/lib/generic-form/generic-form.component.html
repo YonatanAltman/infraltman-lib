@@ -1,9 +1,15 @@
 <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()" class="infra-form">
   <ng-container *ngFor="let config of inputs">
 
-    <div class="field">
+    <div class="field" *ngIf="formGroup.get(config.formControlName) as formInput">
       <div class="label">{{config.label}} <span *ngIf="config.isRequired">*</span></div>
       <input [type]="config.type" [formControlName]="config.formControlName">
+      <div class="errors">
+        <ng-container *ngIf="!formInput?.valid">
+          {{formInput?.errors|json}}
+        </ng-container>
+      </div>
+      {{formInput.status}}
     </div>
   </ng-container>
   <button type="submit">Submit</button>

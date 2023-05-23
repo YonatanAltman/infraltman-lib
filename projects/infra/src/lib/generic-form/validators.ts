@@ -1,5 +1,5 @@
-import {AbstractControl, ValidationErrors, Validators} from "@angular/forms";
-import {delay, Observable, of} from "rxjs";
+import {AbstractControl, AsyncValidatorFn, ValidationErrors, Validators} from "@angular/forms";
+import {delay, map, Observable, of, take} from "rxjs";
 
 export const UID_VALIDATORS = [
   Validators.required,
@@ -20,8 +20,26 @@ export function someAsyncValidators(control: AbstractControl):
 }
 
 
+export const isProjectExistAsyncValidators = (projects$: Observable<string[]>): AsyncValidatorFn => {
+  return (control: AbstractControl): Observable<ValidationErrors | null> => {
+    return projects$.pipe(map(projects => {
+        const {value} = control;
+        if (!value) {
+          return null
+        }
+        const project = projects.find(pr => pr === value);
+        return project ? {'projectAlreadyExists': true} : null;
+      }),
+      take(1) // because the observable mast be complete like http
+    )
+  }
+}
+
+
 const EMAILS = [
   'amir',
   'tom',
   'yuval'
 ]
+
+
