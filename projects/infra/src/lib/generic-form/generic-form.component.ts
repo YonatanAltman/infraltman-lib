@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {GenericFormControl} from "./generic-form.interface";
 
 @Component({
@@ -23,7 +23,9 @@ export class GenericFormComponent implements OnInit {
   buildForm(): void {
     // const form = this.fb.group({});
     this.inputs.forEach(input => {
-      this.formGroup.addControl(input.formControlName, this.fb.control('', [...input?.validators || []]))
+      input.isRequired = input.validators?.includes(Validators.required);
+      this.formGroup.addControl(input.formControlName,
+        this.fb.control('', [...input?.validators || []]))
     })
   }
 

@@ -4,5 +4,6 @@ export interface GenericFormControl {
   label?: string;
   formControlName: string;
   type: 'text' | 'number' | 'textarea' | 'date',
-  validators?: ValidatorFn[]
+  validators?: ValidatorFn[];
+  isRequired?: boolean;
 }

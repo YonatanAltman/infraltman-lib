@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {GenericFormControl, someAsyncValidators} from "@infra";
+import {GenericFormControl, someAsyncValidators, UID_VALIDATORS} from "@infra";
 
 @Component({
   selector: 'app-country-form',
@@ -16,10 +16,7 @@ export class CountryFormComponent {
       label: 'User id',
       formControlName: 'uid',
       validators: [
-        Validators.required,
-        Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])[A-Za-z]*$'),
-        Validators.maxLength(8),
-        Validators.minLength(6),
+        ...UID_VALIDATORS,
         someAsyncValidators
       ]
     }, {
