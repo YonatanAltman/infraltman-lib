@@ -1,0 +1,9 @@
+.infra-form {
+  input.ng-dirty.ng-invalid.ng-touched {
+    border: solid 1px var(--error, red);
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+  }
+}

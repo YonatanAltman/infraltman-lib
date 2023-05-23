@@ -23,7 +23,7 @@ export class GenericFormComponent implements OnInit {
   buildForm(): void {
     // const form = this.fb.group({});
     this.inputs.forEach(input => {
-      this.formGroup.addControl(input.formControlName, this.fb.control(''))
+      this.formGroup.addControl(input.formControlName, this.fb.control('', [...input?.validators || []]))
     })
   }
 

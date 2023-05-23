@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {InfraButton, InfraClass} from "./button.interface";
+import {ChangeDetectionStrategy, Component, HostBinding, Input, OnInit} from '@angular/core';
+import {Color, InfraButton, InfraClass} from "./button.interface";
 
 const CONFIG: Partial<InfraButton> = {
   type: "default",
@@ -28,11 +28,13 @@ export class ButtonComponent implements OnInit {
       this.className,
       this.config?.type,
       this.config?.size,
+      this.color
     ].join(' ');
   };
 
   @Input() config?: InfraButton = CONFIG;
   @Input() label?: string;
+  @HostBinding('color') color?: Color;
 
   ngOnInit(): void {
     this.config = {label: '', ...CONFIG, ...this.config};

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rammetto+One&display=swap');
+
+// _variables.scss
+
+// Light mode colors
+$primary-color-light: #068DA9;
+$secondary-color-light: #7E1717;
+$accent-color-light: #E55807;
+$background-color-light: #ECF8F9;
+
+// Dark mode colors
+$primary-color-dark: #3A8FB3;
+$secondary-color-dark: #E56464;
+$accent-color-dark: #FF8F40;
+$background-color-dark: #121212;
+$font-family: Lato;
+:root {
+  // Light mode
+  --primary-color: #{$primary-color-light};
+  --secondary-color: #{$secondary-color-light};
+  --accent-color: #{$accent-color-light};
+  --background-color: #{$background-color-light};
+
+  // Dark mode
+  --primary-color-dark: #{$primary-color-dark};
+  --secondary-color-dark: #{$secondary-color-dark};
+  --accent-color-dark: #{$accent-color-dark};
+  --background-color-dark: #{$background-color-dark};
+
+  font-family: $font-family;
+}
+
+
+// Apply the theme to the app
+
+body {
+  background-color: var(--background-color);
+  color: #000; /* Default text color for light mode */
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: white;
+
+  &.primary {
+    background-color: var(--primary-color);
+  }
+
+  &.secondary {
+    background-color: var(--secondary-color);
+  }
+
+  &.accent {
+    background-color: var(--accent-color);
+  }
+}
+
+// ...more component styles
+
+// Dark mode styles
+
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: #fff; /* Default text color for dark mode */
+}
+
+body.dark-mode .header {
+  background-color: var(--primary-color-dark);
+}
+
+body.dark-mode .footer {
+  background-color: var(--secondary-color-dark);
+}
+
+body.dark-mode .button {
+  background-color: var(--accent-color-dark);
+}

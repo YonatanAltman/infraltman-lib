@@ -11,6 +11,13 @@ export interface User {
   roles: Role[];
 }
 
+export const toInfraUser = (_user:any):User=>{
+  return {
+    ..._user,
+    uid: _user.id || _user.sid || _user.tz || _user.phone
+  }
+}
+
 @Component({
   selector: 'infra-user-actions',
   templateUrl: './user-actions.component.html',

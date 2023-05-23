@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {GenericFormControl} from "@infra";
+import {GenericFormControl, someAsyncValidators} from "@infra";
 
 @Component({
   selector: 'app-country-form',
@@ -13,12 +13,28 @@ export class CountryFormComponent {
   inputs: GenericFormControl[] = [
     {
       type: 'text',
+      label: 'User id',
+      formControlName: 'uid',
+      validators: [
+        Validators.required,
+        Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])[A-Za-z]*$'),
+        Validators.maxLength(8),
+        Validators.minLength(6),
+        someAsyncValidators
+      ]
+    }, {
+      type: 'text',
       label: 'Name',
-      formControlName:'name'
-    },{
+      formControlName: 'name',
+      validators: [Validators.required]
+    }, {
       type: 'text',
       label: 'Friend',
-      formControlName:'friendName'
+      formControlName: 'friendName'
+    }, {
+      type: 'date',
+      label: 'Birthday',
+      formControlName: 'birthday'
     },
   ];
 

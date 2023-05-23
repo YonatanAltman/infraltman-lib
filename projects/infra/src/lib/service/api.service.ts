@@ -21,7 +21,10 @@ export class ApiService {
   }
 
   get<T>(url: string): Observable<T> {
-    return this.http.get<T>(this.api + url)
+    return this.http.get<T>(this.api + url).pipe(catchError(err => {
+      console.log('error', err);
+      return EMPTY;
+    }))
   }
 
   post<T, R = InfraHttpResponse>(url: string, body: T): Observable<R> {

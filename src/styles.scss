@@ -1,18 +1,1 @@
-$primary: #0C134F;
-$danger: #8d0000;
-$secondary: #1D267D;
-$purple: #5C469C;
-$purple2: #D4ADFC;
-
-body{
-  margin: 0;
-}
-.btn{
-  border-radius: 10px;
-  &.error{
-    background-color: $danger;
-    color: white;
-  }
-}
-
-
+@import "projects/infra/styles/sunday.theme.scss";

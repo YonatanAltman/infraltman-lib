@@ -270,7 +270,12 @@
             "styles": [
               "projects/countries/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/infra/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
